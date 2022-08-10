@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<fieldset
+		name="component"
+		label="COM_GUILDMASTER_FIELDSET_COMPONENT_LABEL"
+	>
+		<field
+			name="guild_name"
+			type="text"
+			label="Name of your EQ2 guild"
+		/>
+
+		<field
+			name="guild_id"
+			type="text"
+			label="ID of your EQ2 guild"
+		/>
+
+		<field
+			name="guild_rank_1"
+			type="text"
+			default="Guild Leader"
+			label="Highest guild rank"
+		/>
+		<field
+			name="guild_rank_2"
+			type="text"
+			default="Senior Officer"
+			label="Guild Rank"
+		/>
+		<field
+			name="guild_rank_3"
+			type="text"
+			default="Officer"
+			label="Guild Rank"
+		/>
+		<field
+			name="guild_rank_4"
+			type="text"
+			default="Senior Member"
+			label="Guild Rank"
+		/>
+		<field
+			name="guild_rank_5"
+			type="text"
+			default="Member"
+			label="Guild Rank"
+		/>
+		<field
+			name="guild_rank_6"
+			type="text"
+			default="Junior Member"
+			label="Guild Rank"
+		/>
+		<field
+			name="guild_rank_7"
+			type="text"
+			default="Initiate"
+			label="Guild Rank"
+		/>
+		<field
+			name="guild_rank_8"
+			type="text"
+			default="Recruit"
+			label="Lowest guild rank"
+		/>
+
+		<field
+			name="cache_time"
+			type="text"
+			size="10"
+			default="86400"
+			label="Time in seconds after roster is updated ( default 86400s = 24h )"
+		/>
+		<field
+			name="hide_time"
+			type="text"
+			size="10"
+			default="365"
+			label="Numbers of days a toon has to be off to be hidden ( 0 to disable hiding )"
+		/>
+		<field
+			name="guild_info"
+			type="radio"
+			default="0"
+			descr="Show guild summary on top of roster"
+		>
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</field>
+		<field
+			name="show_updated"
+			type="radio"
+			default="1"
+			descr="Show time of last update from SOE"
+		>
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</field>
+		<field
+			name="popup"
+			type="radio"
+			default="1"
+			descr="Open character links in a new window"
+		>
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</field>
+		<field
+			name="use_images"
+			type="radio"
+			default="1"
+			descr="Use images for rank and classes, text otherwise"
+		>
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</field>
+		<field
+			name="show_lastnames"
+			type="radio"
+			default="1"
+			descr="Show last names after toon name"
+		>
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</field>
+		<field
+			name="show_prefixtitles"
+			type="radio"
+			default="1"
+			descr="Show titles in front of toon name"
+		>
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</field>
+		<field
+			name="roster_url"
+			type="text"
+			size="50"
+			default="http://eq2players.station.sony.com/en/guild_roster_xml.vm"
+			label="URL at for getting the old XML guild roster from SOE"
+		/>
+		<field
+			name="roster_url_xml"
+			type="text"
+			size="50"
+			default="http://eq2players.station.sony.com/guilds/guild_roster_xml.vm"
+			label="URL at for getting new XML guild roster from SOE"
+		/>
+		<field
+			name="guild_url"
+			type="text"
+			size="50"
+			default="http://eq2players.station.sony.com/en/guilds/guild_profile.vm"
+			label="URL at for getting guild site from SOE"
+		/>
+		<field
+			name="toon_url"
+			type="text"
+			size="50"
+			default="http://eq2players.station.sony.com/characters/character_profile.vm"
+			label="URL to get toon infos from SOE"
+		/>
+	</fieldset>
+</config>

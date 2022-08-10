@@ -1,0 +1,773 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<guild>
+	<details>
+		<id>1699210</id>
+		<name>Atrocitas</name>
+		<server>Innovation</server>
+	</details>
+	<members>
+					<member>
+<id>528289210</id>
+			<name>		Abaris
+</name>
+						<guildRank>Leitender Offizier
+</guildRank>
+									<level>	
+				        47 
+			    </level>
+			<class>
+Fury
+</class>
+			<artisanClass>
+Provisioner
+</artisanClass>
+			<artisanLevel>	
+				        36 
+			    </artisanLevel>
+						<secondaryTradeskillClass>Transmuter
+</secondaryTradeskillClass>
+									<secondaryTradeskillLevel>	
+				        65 
+			    </secondaryTradeskillLevel>
+		</member>
+				<member>
+<id>389014210</id>
+			<name>		Aeschylos
+</name>
+						<guildRank>Leitender Offizier
+</guildRank>
+									<level>	
+				        80 
+			    </level>
+			<class>
+Inquisitor
+</class>
+			<artisanClass>
+Jeweler
+</artisanClass>
+			<artisanLevel>	
+				        80 
+			    </artisanLevel>
+						<secondaryTradeskillClass>Tinkerer
+</secondaryTradeskillClass>
+									<secondaryTradeskillLevel>	
+				        4 
+			    </secondaryTradeskillLevel>
+		</member>
+				<member>
+<id>518892210</id>
+			<name>		Askorus
+</name>
+						<guildRank>Veteran
+</guildRank>
+									<level>	
+				        54 
+			    </level>
+			<class>
+Swashbuckler
+</class>
+			<artisanClass>
+Provisioner
+</artisanClass>
+			<artisanLevel>	
+				        30 
+			    </artisanLevel>
+						<secondaryTradeskillClass>none
+</secondaryTradeskillClass>
+									<secondaryTradeskillLevel>	
+				        0 
+			    </secondaryTradeskillLevel>
+		</member>
+				<member>
+<id>251703210</id>
+			<name>		Crushsty
+</name>
+						<guildRank>Leitender Offizier
+</guildRank>
+									<level>	
+				        48 
+			    </level>
+			<class>
+Berserker
+</class>
+			<artisanClass>
+Weaponsmith
+</artisanClass>
+			<artisanLevel>	
+				        50 
+			    </artisanLevel>
+						<secondaryTradeskillClass>none
+</secondaryTradeskillClass>
+									<secondaryTradeskillLevel>	N/A
+	</secondaryTradeskillLevel>
+		</member>
+				<member>
+<id>339662210</id>
+			<name>		Daquark
+</name>
+						<guildRank>Gruender
+</guildRank>
+									<level>	
+				        75 
+			    </level>
+			<class>
+Necromancer
+</class>
+			<artisanClass>
+Sage
+</artisanClass>
+			<artisanLevel>	
+				        80 
+			    </artisanLevel>
+						<secondaryTradeskillClass>Transmuter
+</secondaryTradeskillClass>
+									<secondaryTradeskillLevel>	
+				        179 
+			    </secondaryTradeskillLevel>
+		</member>
+				<member>
+<id>513336210</id>
+			<name>		Dawaef
+</name>
+						<guildRank>Veteran
+</guildRank>
+									<level>	
+				        53 
+			    </level>
+			<class>
+Ranger
+</class>
+			<artisanClass>
+Jeweler
+</artisanClass>
+			<artisanLevel>	
+				        40 
+			    </artisanLevel>
+						<secondaryTradeskillClass>none
+</secondaryTradeskillClass>
+									<secondaryTradeskillLevel>	
+				        0 
+			    </secondaryTradeskillLevel>
+		</member>
+				<member>
+<id>568115210</id>
+			<name>		Däumelinchen
+</name>
+						<guildRank>Veteran
+</guildRank>
+									<level>	
+				        80 
+			    </level>
+			<class>
+Brigand
+</class>
+			<artisanClass>
+Jeweler
+</artisanClass>
+			<artisanLevel>	
+				        79 
+			    </artisanLevel>
+						<secondaryTradeskillClass>Transmuter
+</secondaryTradeskillClass>
+									<secondaryTradeskillLevel>	
+				        379 
+			    </secondaryTradeskillLevel>
+		</member>
+				<member>
+<id>623071210</id>
+			<name>		Feedin
+</name>
+						<guildRank>Veteran
+</guildRank>
+									<level>	
+				        46 
+			    </level>
+			<class>
+Paladin
+</class>
+			<artisanClass>
+Weaponsmith
+</artisanClass>
+			<artisanLevel>	
+				        37 
+			    </artisanLevel>
+						<secondaryTradeskillClass>none
+</secondaryTradeskillClass>
+									<secondaryTradeskillLevel>	
+				        0 
+			    </secondaryTradeskillLevel>
+		</member>
+				<member>
+<id>381426210</id>
+			<name>		Flexa
+</name>
+						<guildRank>Leitender Offizier
+</guildRank>
+									<level>	
+				        28 
+			    </level>
+			<class>
+Troubador
+</class>
+			<artisanClass>
+Provisioner
+</artisanClass>
+			<artisanLevel>	
+				        40 
+			    </artisanLevel>
+						<secondaryTradeskillClass>none
+</secondaryTradeskillClass>
+									<secondaryTradeskillLevel>	N/A
+	</secondaryTradeskillLevel>
+		</member>
+				<member>
+<id>493997210</id>
+			<name>		Flexia
+</name>
+						<guildRank>Sekraeter
+</guildRank>
+									<level>	
+				        12 
+			    </level>
+			<class>
+Warden
+</class>
+			<artisanClass>
+Unskilled
+</artisanClass>
+			<artisanLevel>	
+				        1 
+			    </artisanLevel>
+						<secondaryTradeskillClass>none
+</secondaryTradeskillClass>
+									<secondaryTradeskillLevel>	N/A
+	</secondaryTradeskillLevel>
+		</member>
+				<member>
+<id>426329210</id>
+			<name>		Flexien
+</name>
+						<guildRank>Gruender
+</guildRank>
+									<level>	
+				        43 
+			    </level>
+			<class>
+Assassin
+</class>
+			<artisanClass>
+Artisan
+</artisanClass>
+			<artisanLevel>	
+				        3 
+			    </artisanLevel>
+						<secondaryTradeskillClass>none
+</secondaryTradeskillClass>
+									<secondaryTradeskillLevel>	N/A
+	</secondaryTradeskillLevel>
+		</member>
+				<member>
+<id>417344210</id>
+			<name>		Galadriil
+</name>
+						<guildRank>Leitender Offizier
+</guildRank>
+									<level>	
+				        51 
+			    </level>
+			<class>
+Wizard
+</class>
+			<artisanClass>
+Woodworker
+</artisanClass>
+			<artisanLevel>	
+				        55 
+			    </artisanLevel>
+						<secondaryTradeskillClass>Tinkerer
+</secondaryTradeskillClass>
+									<secondaryTradeskillLevel>	
+				        12 
+			    </secondaryTradeskillLevel>
+		</member>
+				<member>
+<id>571764210</id>
+			<name>		Gargeul
+</name>
+						<guildRank>Leitender Offizier
+</guildRank>
+									<level>	
+				        30 
+			    </level>
+			<class>
+Defiler
+</class>
+			<artisanClass>
+Carpenter
+</artisanClass>
+			<artisanLevel>	
+				        40 
+			    </artisanLevel>
+						<secondaryTradeskillClass>Tinkerer
+</secondaryTradeskillClass>
+									<secondaryTradeskillLevel>	
+				        1 
+			    </secondaryTradeskillLevel>
+		</member>
+				<member>
+<id>628758210</id>
+			<name>		Ghosthand
+</name>
+						<guildRank>Veteran
+</guildRank>
+									<level>	
+				        65 
+			    </level>
+			<class>
+Bruiser
+</class>
+			<artisanClass>
+Alchemist
+</artisanClass>
+			<artisanLevel>	
+				        78 
+			    </artisanLevel>
+						<secondaryTradeskillClass>none
+</secondaryTradeskillClass>
+									<secondaryTradeskillLevel>	
+				        0 
+			    </secondaryTradeskillLevel>
+		</member>
+				<member>
+<id>400326210</id>
+			<name>		Holyguy
+</name>
+						<guildRank>Leitender Offizier
+</guildRank>
+									<level>	
+				        17 
+			    </level>
+			<class>
+Paladin
+</class>
+			<artisanClass>
+Artisan
+</artisanClass>
+			<artisanLevel>	
+				        3 
+			    </artisanLevel>
+						<secondaryTradeskillClass>none
+</secondaryTradeskillClass>
+									<secondaryTradeskillLevel>	N/A
+	</secondaryTradeskillLevel>
+		</member>
+				<member>
+<id>272506210</id>
+			<name>		Iwak
+</name>
+						<guildRank>Veteran
+</guildRank>
+									<level>	
+				        80 
+			    </level>
+			<class>
+Berserker
+</class>
+			<artisanClass>
+Weaponsmith
+</artisanClass>
+			<artisanLevel>	
+				        32 
+			    </artisanLevel>
+						<secondaryTradeskillClass>none
+</secondaryTradeskillClass>
+									<secondaryTradeskillLevel>	
+				        0 
+			    </secondaryTradeskillLevel>
+		</member>
+				<member>
+<id>616271210</id>
+			<name>		Jaisah
+</name>
+						<guildRank>Anwaerter
+</guildRank>
+									<level>	
+				        20 
+			    </level>
+			<class>
+Coercer
+</class>
+			<artisanClass>
+Unskilled
+</artisanClass>
+			<artisanLevel>	
+				        1 
+			    </artisanLevel>
+						<secondaryTradeskillClass>none
+</secondaryTradeskillClass>
+									<secondaryTradeskillLevel>	
+				        0 
+			    </secondaryTradeskillLevel>
+		</member>
+				<member>
+<id>571012210</id>
+			<name>		Naseer
+</name>
+						<guildRank>Leitender Offizier
+</guildRank>
+									<level>	
+				        55 
+			    </level>
+			<class>
+Brigand
+</class>
+			<artisanClass>
+Outfitter
+</artisanClass>
+			<artisanLevel>	
+				        10 
+			    </artisanLevel>
+						<secondaryTradeskillClass>none
+</secondaryTradeskillClass>
+									<secondaryTradeskillLevel>	
+				        0 
+			    </secondaryTradeskillLevel>
+		</member>
+				<member>
+<id>597794210</id>
+			<name>		Nepoumuk
+</name>
+						<guildRank>Veteran
+</guildRank>
+									<level>	
+				        52 
+			    </level>
+			<class>
+Berserker
+</class>
+			<artisanClass>
+Tailor
+</artisanClass>
+			<artisanLevel>	
+				        78 
+			    </artisanLevel>
+						<secondaryTradeskillClass>Tinkerer
+</secondaryTradeskillClass>
+									<secondaryTradeskillLevel>	
+				        386 
+			    </secondaryTradeskillLevel>
+		</member>
+				<member>
+<id>677144210</id>
+			<name>		Occhju
+</name>
+						<guildRank>Leitender Offizier
+</guildRank>
+									<level>	
+				        27 
+			    </level>
+			<class>
+Illusionist
+</class>
+			<artisanClass>
+Craftsman
+</artisanClass>
+			<artisanLevel>	
+				        11 
+			    </artisanLevel>
+						<secondaryTradeskillClass>none
+</secondaryTradeskillClass>
+									<secondaryTradeskillLevel>	
+				        0 
+			    </secondaryTradeskillLevel>
+		</member>
+				<member>
+<id>617657210</id>
+			<name>		Pelok
+</name>
+						<guildRank>Veteran
+</guildRank>
+									<level>	
+				        71 
+			    </level>
+			<class>
+Necromancer
+</class>
+			<artisanClass>
+Sage
+</artisanClass>
+			<artisanLevel>	
+				        22 
+			    </artisanLevel>
+						<secondaryTradeskillClass>Transmuter
+</secondaryTradeskillClass>
+									<secondaryTradeskillLevel>	
+				        22 
+			    </secondaryTradeskillLevel>
+		</member>
+				<member>
+<id>624482210</id>
+			<name>		Peppo
+</name>
+						<guildRank>Anwaerter
+</guildRank>
+									<level>	
+				        32 
+			    </level>
+			<class>
+Wizard
+</class>
+			<artisanClass>
+Carpenter
+</artisanClass>
+			<artisanLevel>	
+				        45 
+			    </artisanLevel>
+						<secondaryTradeskillClass>Tinkerer
+</secondaryTradeskillClass>
+									<secondaryTradeskillLevel>	
+				        9 
+			    </secondaryTradeskillLevel>
+		</member>
+				<member>
+<id>401443210</id>
+			<name>		Philo
+</name>
+						<guildRank>Leitender Offizier
+</guildRank>
+									<level>	
+				        77 
+			    </level>
+			<class>
+Assassin
+</class>
+			<artisanClass>
+Carpenter
+</artisanClass>
+			<artisanLevel>	
+				        80 
+			    </artisanLevel>
+						<secondaryTradeskillClass>none
+</secondaryTradeskillClass>
+									<secondaryTradeskillLevel>	
+				        0 
+			    </secondaryTradeskillLevel>
+		</member>
+				<member>
+<id>403974210</id>
+			<name>		Pigleta
+</name>
+						<guildRank>Leitender Offizier
+</guildRank>
+									<level>	
+				        37 
+			    </level>
+			<class>
+Fury
+</class>
+			<artisanClass>
+Alchemist
+</artisanClass>
+			<artisanLevel>	
+				        41 
+			    </artisanLevel>
+						<secondaryTradeskillClass>Tinkerer
+</secondaryTradeskillClass>
+									<secondaryTradeskillLevel>	
+				        1 
+			    </secondaryTradeskillLevel>
+		</member>
+				<member>
+<id>324568210</id>
+			<name>		Quaroll
+</name>
+						<guildRank>Leitender Offizier
+</guildRank>
+									<level>	
+				        50 
+			    </level>
+			<class>
+Shadow Knight
+</class>
+			<artisanClass>
+Tailor
+</artisanClass>
+			<artisanLevel>	
+				        50 
+			    </artisanLevel>
+						<secondaryTradeskillClass>Tinkerer
+</secondaryTradeskillClass>
+									<secondaryTradeskillLevel>	
+				        1 
+			    </secondaryTradeskillLevel>
+		</member>
+				<member>
+<id>642411210</id>
+			<name>		Seregithil
+</name>
+						<guildRank>Veteran
+</guildRank>
+									<level>	
+				        38 
+			    </level>
+			<class>
+Assassin
+</class>
+			<artisanClass>
+Sage
+</artisanClass>
+			<artisanLevel>	
+				        58 
+			    </artisanLevel>
+						<secondaryTradeskillClass>none
+</secondaryTradeskillClass>
+									<secondaryTradeskillLevel>	
+				        0 
+			    </secondaryTradeskillLevel>
+		</member>
+				<member>
+<id>413222210</id>
+			<name>		Shigella
+</name>
+						<guildRank>Veteran
+</guildRank>
+									<level>	
+				        74 
+			    </level>
+			<class>
+Wizard
+</class>
+			<artisanClass>
+Sage
+</artisanClass>
+			<artisanLevel>	
+				        44 
+			    </artisanLevel>
+						<secondaryTradeskillClass>Transmuter
+</secondaryTradeskillClass>
+									<secondaryTradeskillLevel>	
+				        100 
+			    </secondaryTradeskillLevel>
+		</member>
+				<member>
+<id>642059210</id>
+			<name>		Shiggia
+</name>
+						<guildRank>Anwaerter
+</guildRank>
+									<level>	
+				        23 
+			    </level>
+			<class>
+Bruiser
+</class>
+			<artisanClass>
+Unskilled
+</artisanClass>
+			<artisanLevel>	
+				        1 
+			    </artisanLevel>
+						<secondaryTradeskillClass>none
+</secondaryTradeskillClass>
+									<secondaryTradeskillLevel>	
+				        0 
+			    </secondaryTradeskillLevel>
+		</member>
+				<member>
+<id>532741210</id>
+			<name>		Sirenar
+</name>
+						<guildRank>Leitender Offizier
+</guildRank>
+									<level>	
+				        42 
+			    </level>
+			<class>
+Dirge
+</class>
+			<artisanClass>
+Provisioner
+</artisanClass>
+			<artisanLevel>	
+				        71 
+			    </artisanLevel>
+						<secondaryTradeskillClass>Transmuter
+</secondaryTradeskillClass>
+									<secondaryTradeskillLevel>	
+				        100 
+			    </secondaryTradeskillLevel>
+		</member>
+				<member>
+<id>481026210</id>
+			<name>		Slevin
+</name>
+						<guildRank>Gruender
+</guildRank>
+									<level>	
+				        71 
+			    </level>
+			<class>
+Bruiser
+</class>
+			<artisanClass>
+Alchemist
+</artisanClass>
+			<artisanLevel>	
+				        71 
+			    </artisanLevel>
+						<secondaryTradeskillClass>Transmuter
+</secondaryTradeskillClass>
+									<secondaryTradeskillLevel>	
+				        114 
+			    </secondaryTradeskillLevel>
+		</member>
+				<member>
+<id>391042210</id>
+			<name>		Tasso
+</name>
+						<guildRank>Leitender Offizier
+</guildRank>
+									<level>	
+				        48 
+			    </level>
+			<class>
+Berserker
+</class>
+			<artisanClass>
+Armorer
+</artisanClass>
+			<artisanLevel>	
+				        80 
+			    </artisanLevel>
+						<secondaryTradeskillClass>none
+</secondaryTradeskillClass>
+									<secondaryTradeskillLevel>	
+				        0 
+			    </secondaryTradeskillLevel>
+		</member>
+				<member>
+<id>653665210</id>
+			<name>		Thalionwen
+</name>
+						<guildRank>Veteran
+</guildRank>
+									<level>	
+				        42 
+			    </level>
+			<class>
+Fury
+</class>
+			<artisanClass>
+Woodworker
+</artisanClass>
+			<artisanLevel>	
+				        60 
+			    </artisanLevel>
+						<secondaryTradeskillClass>none
+</secondaryTradeskillClass>
+									<secondaryTradeskillLevel>	
+				        0 
+			    </secondaryTradeskillLevel>
+		</member>
+			</members>
+</guild>
