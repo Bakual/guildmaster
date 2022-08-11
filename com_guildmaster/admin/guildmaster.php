@@ -3,7 +3,7 @@
 // no direct access
 defined('_JEXEC') or die('Restricted access');
 
-require_once(JPATH_COMPONENT.DS.'controller.php');
+require_once(JPATH_COMPONENT . '/controller.php');
 
 //if (!JRequest::getVar('view') && !JRequest::getVar('task') && !JRequest::getVar('controller')) {
 //    JRequest::setVar('view', 'config');
