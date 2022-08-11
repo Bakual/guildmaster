@@ -27,11 +27,13 @@
 	<files folder="site">
 		<filename>controller.php</filename>
 		<filename>guildmaster.php</filename>
-		<filename>guildmaster.parser.php</filename>
 		<filename>toon.guildmaster.class.php</filename>
 		<filename>heritage.guildmaster.class.php</filename>
 		<filename>guild.guildmaster.class.php</filename>
 		<folder>language</folder>
+		<folder>helpers</folder>
+		<folder>views</folder>
+		<folder>models</folder>
 	</files>
 	<media destination="com_guildmaster" folder="media">
 		<folder>races</folder>
@@ -41,15 +43,13 @@
 		<folder>quests</folder>
 	</media>
 	<administration>
-		<menu view="config">Guild Master</menu>
+		<menu>Guild Master</menu>
 		<files folder="admin">
 			<filename>guildmaster.php</filename>
 			<filename>config.xml</filename>
 			<filename>controller.php</filename>
 			<folder>sql</folder>
 			<folder>views</folder>
-			<folder>tables</folder>
-			<folder>models</folder>
 			<folder>language</folder>
 		</files>
 	</administration>

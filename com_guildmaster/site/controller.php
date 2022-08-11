@@ -19,6 +19,5 @@ class GuildmasterController extends BaseController
 	 * @var    string
 	 * @since  2.0
 	 */
-	protected $default_view = '';
-
+	protected $default_view = 'roster';
 }

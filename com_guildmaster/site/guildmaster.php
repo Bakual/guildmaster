@@ -14,13 +14,14 @@ use Joomla\CMS\MVC\Controller\BaseController;
 
 $app    = Factory::getApplication();
 $jinput = $app->input;
-$config = $app->getParams();
+$params = $app->getParams();
 
-require_once(JPATH_COMPONENT . '/guildmaster.parser.php');
+// Register Helperclasses for autoloading
+JLoader::discover('GuildmasterHelper', JPATH_COMPONENT . '/helpers');
+
 require_once(JPATH_COMPONENT . '/guild.guildmaster.class.php');
 require_once(JPATH_COMPONENT . '/toon.guildmaster.class.php');
 require_once(JPATH_COMPONENT . '/heritage.guildmaster.class.php');
-require_once(JPATH_BASE . '/administrator/components/com_guildmaster/guildmaster.class.php');
 
 $doc = Factory::getDocument();
 
@@ -29,8 +30,7 @@ $jlang = Factory::getLanguage();
 $jlang->load('com_guildmaster', JPATH_COMPONENT, 'en-GB', true);
 $jlang->load('com_guildmaster', JPATH_COMPONENT, null, true);
 
-
-if (!$config->guild_id)
+if (!$params->get('guild_id'))
 {
 	$app->enqueueMessage('Guild ID not set.<br>Please check configuration.');
 
@@ -47,46 +47,47 @@ $task           = $jinput->get('task');
 $todo           = $jinput->get('todo');
 
 $Itemid              = $jinput->getInt('Itemid');
-$config->index       = 'index.php?option=com_guildmaster&Itemid=' . $Itemid;
-$config->images_path = 'media/com_guildmaster/';
+$params->index       = 'index.php?option=com_guildmaster&Itemid=' . $Itemid;
+$params->images_path = 'media/com_guildmaster/';
 
-update_all($error, $config, $database, $force_update);
+GuildmasterHelperCensus::updateFromCensus();
+//update_all($error, $params, $database, $force_update);
 
 switch ($task)
 {
 	case "claim" :
-		claim_toon($database, $config, $user, $session);
+		claim_toon($database, $params, $user, $session);
 		break;
 	case "release" :
-		release_toon($database, $config, $user, $session);
+		release_toon($database, $params, $user, $session);
 		break;
 	case "heritage" :
-		display_heritage($database, $config, $user, $session, $disable_hiding);
+		display_heritage($database, $params, $user, $session, $disable_hiding);
 		break;
 	case "edit_heri" :
-		edit_heritage($database, $config, $user, $session);
+		edit_heritage($database, $params, $user, $session);
 		break;
 	case "save_heri" :
 		if (strtolower($todo) == "save")
 		{
-			save_heritage($database, $config, $user, $session);
+			save_heritage($database, $params, $user, $session);
 		}
 		else
 		{
-			$mainframe->redirect($config->index . '&task=heritage', "");
+			$mainframe->redirect($params->index . '&task=heritage', "");
 		}
 		break;
 	case "compare_heri" :
-		compare_heritage($database, $config, $user, $session);
+		compare_heritage($database, $params, $user, $session);
 		break;
 	default :
-		display_roster($database, $config, $user, $session, $disable_hiding);
+		display_roster($database, $params, $user, $session, $disable_hiding);
 }
 
 return;
 
 // ******************************** save heritage quests *****************************
-function compare_heritage(&$database, &$config, $user, $session)
+function compare_heritage(&$database, &$params, $user, $session)
 {
 	$heri_id = (int) JRequest:: getVar('heri_id');
 
@@ -137,7 +138,7 @@ function compare_heritage(&$database, &$config, $user, $session)
 
 	echo '</tr>';
 	echo '<tr><td colspan="2">';
-	echo '<a href="' . $config->index . '&task="heritage">Back</a>';
+	echo '<a href="' . $params->index . '&task="heritage">Back</a>';
 	echo '</td></tr>';
 	echo '</table>';
 
@@ -145,7 +146,7 @@ function compare_heritage(&$database, &$config, $user, $session)
 }
 
 // ******************************** save heritage quests *****************************
-function save_heritage(&$database, &$config, $user, $session)
+function save_heritage(&$database, &$params, $user, $session)
 {
 	global $mainframe;
 	$user_id = $user->get('id');
@@ -185,13 +186,13 @@ function save_heritage(&$database, &$config, $user, $session)
 
 	}
 
-	$mainframe->redirect($config->index . '&task=heritage', 'Heritage quests for ' . $toon->Name . ' updated !');
+	$mainframe->redirect($params->index . '&task=heritage', 'Heritage quests for ' . $toon->Name . ' updated !');
 
 	return;
 }
 
 // ******************************** edit heritage quests *****************************
-function edit_heritage(&$database, &$config, $user, $session)
+function edit_heritage(&$database, &$params, $user, $session)
 {
 	$user_id = $user->get('id');
 	$toon_id = (int) JRequest:: getVar('toon_id');
@@ -223,7 +224,7 @@ function edit_heritage(&$database, &$config, $user, $session)
 		return;
 	}
 
-	echo '<form enctype="multipart/form-data" task="' . $config->index . '" method="post" name="edit_heri">';
+	echo '<form enctype="multipart/form-data" task="' . $params->index . '" method="post" name="edit_heri">';
 	echo '<table class="contentpane">';
 	echo '<tr>';
 	echo '<tr><th colspan="3" align="center">Heritage Quests for ' . $toon->Name . '</th>';
@@ -248,7 +249,7 @@ function edit_heritage(&$database, &$config, $user, $session)
 			$toggle = 1;
 		}
 
-		echo '<td><a href="' . $quest->reward_url . '"><image src="' . $config->images_path . 'quests/' . $quest->name_short . '.jpg"/></a></td>';
+		echo '<td><a href="' . $quest->reward_url . '"><image src="' . $params->images_path . 'quests/' . $quest->name_short . '.jpg"/></a></td>';
 		echo '<td><a href="' . $quest->url . '">' . $quest->name_short . '</a> - ' . $quest->name . ' (' . $quest->level . ')</td>';
 
 		$all_steps = $quest->get_all_steps();
@@ -281,13 +282,13 @@ function edit_heritage(&$database, &$config, $user, $session)
 	echo '</table>';
 	echo '</form>';
 
-	show_pager($qoffset, $qlimit, $nr_quests, $config->index . '&task=edit_heri&toon_id=' . $toon_id);
+	show_pager($qoffset, $qlimit, $nr_quests, $params->index . '&task=edit_heri&toon_id=' . $toon_id);
 
 	return;
 }
 
 // ******************************** Release toon *****************************
-function release_toon(&$database, &$config, $user, $session)
+function release_toon(&$database, &$params, $user, $session)
 {
 	global $mainframe;
 	$user_id = $user->get('id');
@@ -303,13 +304,13 @@ function release_toon(&$database, &$config, $user, $session)
 
 	$toon->release();
 
-	$mainframe->redirect($config->index, $toon->Name . " is free again !");
+	$mainframe->redirect($params->index, $toon->Name . " is free again !");
 
 	return;
 }
 
 // ******************************** Claim toon *****************************
-function claim_toon(&$database, &$config, $user, $session)
+function claim_toon(&$database, &$params, $user, $session)
 {
 	global $mainframe;
 	$user_id = $user->get('id');
@@ -325,11 +326,11 @@ function claim_toon(&$database, &$config, $user, $session)
 
 	$toon->claim($user_id);
 
-	$mainframe->redirect($config->index, $toon->Name . " is now yours !");
+	$mainframe->redirect($params->index, $toon->Name . " is now yours !");
 }
 
 // ******************************** Display Code *****************************
-function display_roster(&$database, &$config, $user, $session, $disable_hiding = null)
+function display_roster(&$database, &$params, $user, $session, $disable_hiding = null)
 {
 	$order   = JRequest:: getVar('order', 'S');
 	$orderd  = (int) JRequest:: getVar('orderd', 0);
@@ -337,7 +338,7 @@ function display_roster(&$database, &$config, $user, $session, $disable_hiding =
 	$tlimit  = (int) JRequest:: getVar('tlimit', 50);
 	$user_id = $user->get('id');
 
-	($disable_hiding) ? $hide_time = 0 : $hide_time = $config->hide_time;
+	($disable_hiding) ? $hide_time = 0 : $hide_time = $params->hide_time;
 
 	// $roster_columns = array ('N' => array ('name', 'Name', 'left'), 'R' => array ('rank_value', 'Rank', 'left'), 'AC' => array ('Adv_Class', 'Adventure', 'left'), 'AL' => array ('Adv_Level', 'Lvl', 'left'), 'CC' => array ('Art_Class', 'Artisan', 'left'), 'CL' => array ('Art_Level', 'Lvl', 'left'), 'S' => array ('Points', 'Status', 'right'), 'ST' => array ('Points_time', 'Stat/d', 'right'), 'Q' => array ('Quests', 'Quests', 'right'), 'K' => array ('KvD', 'KvD', 'right'), 'LON' => array ('lastonline', 'Last on', 'right'));
 
@@ -357,7 +358,7 @@ function display_roster(&$database, &$config, $user, $session, $disable_hiding =
 
 	// reload guild from DB
 	$guild = new GuildMasterGuild($database);
-	$guild->load($config->guild_id);
+	$guild->load($params->guild_id);
 
 	$toons = GuildMasterToon:: get_all($database, $db_order, $orderd, $toffset, $tlimit, $hide_time);
 
@@ -374,7 +375,7 @@ function display_roster(&$database, &$config, $user, $session, $disable_hiding =
 	$colspan = count($roster_columns) + 1;
 	echo '<table class="contentpane">';
 
-	if ($config->guild_info)
+	if ($params->guild_info)
 	{
 		echo '<tr class="contentheading"><th colspan="' . $colspan . '" align="center">';
 		echo $guild->guild_name;
@@ -412,10 +413,10 @@ function display_roster(&$database, &$config, $user, $session, $disable_hiding =
 		{
 			$_orderd = 0;
 		}
-		echo '>&nbsp;<a href="' . $config->index . '&order=' . $key . '&orderd=' . $_orderd . '">' . $col[1] . '</a>&nbsp;</th>';
+		echo '>&nbsp;<a href="' . $params->index . '&order=' . $key . '&orderd=' . $_orderd . '">' . $col[1] . '</a>&nbsp;</th>';
 	}
 	echo '</tr>';
-	if ($config->popup)
+	if ($params->popup)
 	{
 		$target = ' target="_blank"';
 	}
@@ -445,20 +446,20 @@ function display_roster(&$database, &$config, $user, $session, $disable_hiding =
 			if (is_null($toon->user_id))
 			{
 				//claim toon
-				echo '<a href="' . $config->index . '&task=claim&toon_id=' . $toon->toon_id . '">C</a>';
+				echo '<a href="' . $params->index . '&task=claim&toon_id=' . $toon->toon_id . '">C</a>';
 			}
 			elseif ($toon->user_id == $user_id || $user->get('usertype') == "Super Administrator")
 			{
 				//release toon
-				echo '<a href="' . $config->index . '&task=release&toon_id=' . $toon->toon_id . '">R</a>';
+				echo '<a href="' . $params->index . '&task=release&toon_id=' . $toon->toon_id . '">R</a>';
 			}
 		}
 		echo '</td>';
 
 		// Rank
-		if ($config->use_images)
+		if ($params->use_images)
 		{
-			echo '<td align="left"><image src="' . $config->images_path . 'ranks/rank' . $toon->Rank_Value . '.png" alt="' . $toon->Rank . '" title="' . $toon->Rank . '"/></td>';
+			echo '<td align="left"><image src="' . $params->images_path . 'ranks/rank' . $toon->Rank_Value . '.png" alt="' . $toon->Rank . '" title="' . $toon->Rank . '"/></td>';
 		}
 		else
 		{
@@ -467,28 +468,28 @@ function display_roster(&$database, &$config, $user, $session, $disable_hiding =
 
 		// Name
 		$toon_name = $toon->Name;
-		if ($config->show_lastnames)
+		if ($params->show_lastnames)
 		{
 			$toon_name .= ' ' . $toon->Last_name;
 		}
-		if ($config->show_prefixtitles)
+		if ($params->show_prefixtitles)
 		{
 			$toon_name = $toon->PrefixTitle . ' ' . $toon_name;
 		}
 		echo '<td align="left">&nbsp;<a href="http://eq2players.station.sony.com/en/pplayer.vm?characterId=' . $toon->toon_id . '" ' . $target . '>' . $toon_name . '</a>&nbsp;</td>';
 
 		// Race
-//		if ($config->use_images) {
-//			echo '<td align="left"><image src="'.$config->images_path.'races/'.strtolower(preg_replace('/\s+/','',$toon->Race)).'.gif" alt="'.$toon->Race.'" title="'.$toon->Race.'"/></td>';
+//		if ($params->use_images) {
+//			echo '<td align="left"><image src="'.$params->images_path.'races/'.strtolower(preg_replace('/\s+/','',$toon->Race)).'.gif" alt="'.$toon->Race.'" title="'.$toon->Race.'"/></td>';
 //		} else {
 //			echo '<td align="left">'.$toon->Race.'</td>';
 //		}
 
 		// Adventurer
 		echo '<td align="right">&nbsp;' . $toon->Adv_Level . '&nbsp;</td>';
-		if ($config->use_images)
+		if ($params->use_images)
 		{
-			echo '<td align="left"><image src="' . $config->images_path . 'adventurer/' . strtolower(preg_replace('/\s+/', '', $toon->Adv_Class)) . '.gif" alt="' . $toon->Adv_Class . '" title="' . $toon->Adv_Class . '"/></td>';
+			echo '<td align="left"><image src="' . $params->images_path . 'adventurer/' . strtolower(preg_replace('/\s+/', '', $toon->Adv_Class)) . '.gif" alt="' . $toon->Adv_Class . '" title="' . $toon->Adv_Class . '"/></td>';
 		}
 		else
 		{
@@ -501,9 +502,9 @@ function display_roster(&$database, &$config, $user, $session, $disable_hiding =
 			$toon->Art_Class = "Unskilled";
 		}
 		echo '<td align="right">&nbsp;' . $toon->Art_Level . '&nbsp;</td>';
-		if ($config->use_images)
+		if ($params->use_images)
 		{
-			echo '<td align="left"><image src="' . $config->images_path . 'tradeskill/' . strtolower(preg_replace('/\s+/', '', $toon->Art_Class)) . '.gif" alt="' . $toon->Art_Class . '" title="' . $toon->Art_Class . '"/></td>';
+			echo '<td align="left"><image src="' . $params->images_path . 'tradeskill/' . strtolower(preg_replace('/\s+/', '', $toon->Art_Class)) . '.gif" alt="' . $toon->Art_Class . '" title="' . $toon->Art_Class . '"/></td>';
 		}
 		else
 		{
@@ -529,7 +530,7 @@ function display_roster(&$database, &$config, $user, $session, $disable_hiding =
 		echo '</tr>';
 	}
 
-	if ($config->show_updated)
+	if ($params->show_updated)
 	{
 		echo '<tr class="small"><td colspan="' . $colspan . '" align="center">';
 		echo 'Last Updated: ' . $guild->Last_Updated;
@@ -542,7 +543,7 @@ function display_roster(&$database, &$config, $user, $session, $disable_hiding =
 }
 
 // ******************************** Display Code *****************************
-function display_heritage(&$database, &$config, $user, $session, $disable_hiding = null)
+function display_heritage(&$database, &$params, $user, $session, $disable_hiding = null)
 {
 	$user_id = $user->get('id');
 	$qoffset = JRequest:: getVar('qoffset', null);
@@ -554,7 +555,7 @@ function display_heritage(&$database, &$config, $user, $session, $disable_hiding
 	$qlimit  = (int) JRequest:: getVar('qlimit', 16);
 	$toffset = (int) JRequest:: getVar('toffset', 0);
 	$tlimit  = (int) JRequest:: getVar('tlimit', 50);
-	($disable_hiding) ? $hide_time = 0 : $hide_time = $config->hide_time;
+	($disable_hiding) ? $hide_time = 0 : $hide_time = $params->hide_time;
 
 	$quests    = GuildMasterHeritage:: get_all($database, $qoffset, $qlimit);
 	$nr_quests = GuildMasterHeritage:: get_nr_quests($database);
@@ -576,7 +577,7 @@ function display_heritage(&$database, &$config, $user, $session, $disable_hiding
 	echo '<th>Reward</th>';
 	foreach ($quests as $quest)
 	{
-		echo '<th align="center"><a href="' . $quest->reward_url . '"><image src="' . $config->images_path . 'quests/' . $quest->name_short . '.jpg"/></a></th>';
+		echo '<th align="center"><a href="' . $quest->reward_url . '"><image src="' . $params->images_path . 'quests/' . $quest->name_short . '.jpg"/></a></th>';
 	}
 	echo '</tr>';
 
@@ -594,7 +595,7 @@ function display_heritage(&$database, &$config, $user, $session, $disable_hiding
 	echo '<th>Compare</th>';
 	foreach ($quests as $quest)
 	{
-		echo '<th align="center"><a href="' . $config->index . '&task=compare_heri&heri_id=' . $quest->heri_id . '">[<b>?</b>]</a></th>';
+		echo '<th align="center"><a href="' . $params->index . '&task=compare_heri&heri_id=' . $quest->heri_id . '">[<b>?</b>]</a></th>';
 	}
 	echo '</tr>';
 
@@ -630,7 +631,7 @@ function display_heritage(&$database, &$config, $user, $session, $disable_hiding
 			else
 			{
 				// edit button
-				echo '<td><a href="' . $config->index . '&task=edit_heri&toon_id=' . $toon->toon_id . '">Edit</a></td>';
+				echo '<td><a href="' . $params->index . '&task=edit_heri&toon_id=' . $toon->toon_id . '">Edit</a></td>';
 			}
 
 			foreach ($quests as $quest)
@@ -650,7 +651,7 @@ function display_heritage(&$database, &$config, $user, $session, $disable_hiding
 					{
 						$image = "progress.png";
 					}
-					echo '<td align="center"><image src="' . $config->images_path . 'quests/' . $image . '"/></td>';
+					echo '<td align="center"><image src="' . $params->images_path . 'quests/' . $image . '"/></td>';
 				}
 			}
 
@@ -660,7 +661,7 @@ function display_heritage(&$database, &$config, $user, $session, $disable_hiding
 
 	echo '</table>';
 
-	show_pager($qoffset, $qlimit, $nr_quests, $config->index . '&task=heritage');
+	show_pager($qoffset, $qlimit, $nr_quests, $params->index . '&task=heritage');
 
 	return;
 }

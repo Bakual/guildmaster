@@ -82,56 +82,61 @@
 		<field
 			name="guild_info"
 			type="radio"
-			default="0"
-			descr="Show guild summary on top of roster"
+			label="Show guild summary on top of roster"
+			layout="joomla.form.field.radio.switcher"
 		>
-			<option value="1">Yes</option>
-			<option value="0">No</option>
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
 		</field>
 		<field
 			name="show_updated"
 			type="radio"
+			label="Show time of last update from SOE"
+			layout="joomla.form.field.radio.switcher"
 			default="1"
-			descr="Show time of last update from SOE"
 		>
-			<option value="1">Yes</option>
-			<option value="0">No</option>
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
 		</field>
 		<field
 			name="popup"
 			type="radio"
+			label="Open character links in a new window"
+			layout="joomla.form.field.radio.switcher"
 			default="1"
-			descr="Open character links in a new window"
 		>
-			<option value="1">Yes</option>
-			<option value="0">No</option>
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
 		</field>
 		<field
 			name="use_images"
 			type="radio"
+			label="Use images for rank and classes, text otherwise"
+			layout="joomla.form.field.radio.switcher"
 			default="1"
-			descr="Use images for rank and classes, text otherwise"
 		>
-			<option value="1">Yes</option>
-			<option value="0">No</option>
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
 		</field>
 		<field
 			name="show_lastnames"
 			type="radio"
+			label="Show last names after toon name"
+			layout="joomla.form.field.radio.switcher"
 			default="1"
-			descr="Show last names after toon name"
 		>
-			<option value="1">Yes</option>
-			<option value="0">No</option>
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
 		</field>
 		<field
 			name="show_prefixtitles"
 			type="radio"
+			label="Show titles in front of toon name"
+			layout="joomla.form.field.radio.switcher"
 			default="1"
-			descr="Show titles in front of toon name"
 		>
-			<option value="1">Yes</option>
-			<option value="0">No</option>
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
 		</field>
 		<field
 			name="roster_url"
